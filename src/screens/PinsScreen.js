@@ -45,7 +45,7 @@ export default function PinsScreen() {
               {pins.map((p) => (
                 <List.Item
                   key={p.id}
-                  title={`${p.lat.toFixed(6)}, ${p.lon.toFixed(6)}`}
+                  title={`${p.lat}, ${p.lon}`}
                   description={new Date(p.ts).toLocaleString()}
                   left={(props) => <List.Icon {...props} icon="map-marker" />}
                   right={() => (
