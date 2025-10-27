@@ -6,7 +6,7 @@ export async function loadPins() {
   try {
     const res = await AsyncStorage.getItem(KEY);
     console.log("loaded" , res)
-    return JSON.parse(res);
+    return res ? JSON.parse(res) : [] ;
   } catch {
     return [];
   }

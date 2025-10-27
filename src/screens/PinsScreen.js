@@ -22,7 +22,7 @@ export default function PinsScreen() {
     const next = pins.filter((a) => a.id !== id);
     await savePins(next);
     setPins(next);
-    setSnack("TODO: delete pin");
+    setSnack("pin deleted");
   };
 
   const sharePin = async (p) => {
@@ -30,7 +30,7 @@ export default function PinsScreen() {
       message : `Im sharing the pin i saved i was at lat:${(p.lat)}  lon:${(p.lon)} at ${Date(p.ts).toLocaleString()}`,
     })
     // TODO(7): Share pin location nicely (include timestamp if you like)
-    setSnack("TODO: share pin");
+    setSnack("pin shared");
   };
 
   return (

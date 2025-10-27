@@ -110,7 +110,6 @@ export default function CompassScreen({ navigation }) {
     const id = nowISO();
     const lat = (coords.latitude);
     const lon = (coords.longitude);
-    const heading = heading;
     const ts = nowISO();
     const pin = { id, lat, lon, heading, ts };
     const next = [...pins, pin];
@@ -121,10 +120,11 @@ export default function CompassScreen({ navigation }) {
 
   const copyCoords = async () => {
     if (!coords) {
-      setSnack("TODO: copy coords");
+      setSnack("Coordinates not found!!!!");
       return;
     }
     await Clipboard.setStringAsync(`${(coords.latitude)}, ${(coords.longitude)}`);
+    setSnack("Copied!");
     // TODO(3): Clipboard.setStringAsync("lat, lon") then snackbar
   };
 
